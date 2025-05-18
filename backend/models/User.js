@@ -7,5 +7,8 @@ const UserSchema = new Schema({
  password:{type: String, required: true},
  timestamp:{type: Date, default: Date.now},
 });
-
-module.exports = mongoose.model('user', UserSchema);
+const User = mongoose.model('user', UserSchema);
+// Export the User model
+User.createIndexes();
+module.exports = User;
+// This code defines a Mongoose schema and model for a User in a MongoDB database.
